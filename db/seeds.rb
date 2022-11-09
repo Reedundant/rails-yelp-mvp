@@ -14,6 +14,12 @@
     category: %w[chinese italian japanese french belgian].sample
   )
   puts 'Creating your restaurants!'
+  5.times do
+    review = Review.create!(
+      rating rand(1..5),
+      content: Faker::TvShows::DumbAndDumber.quote,
+      restaurant_id: restaurant.id
+    )
 end
 
 puts 'Behold!'
